@@ -12,20 +12,23 @@
 html{scroll-behavior:smooth}
 body{margin:0}
 a{color:#14213D}a:hover{color:#2B3F6B}
-/* Carrossel "Como funciona" */
-.cf-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 8px;scrollbar-width:none;cursor:grab;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+/* Carrossel "Como funciona" (infinito, de ponta a ponta da tela) */
+.cf-track{--cf-pad:max(24px, calc((100% - 1160px) / 2 + 24px));position:relative;display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--cf-pad);padding:8px var(--cf-pad) 32px;scrollbar-width:none;cursor:grab;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
 .cf-track::-webkit-scrollbar{display:none}
 .cf-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
-.cf-card{flex:0 0 calc((100% - 48px) / 3);box-sizing:border-box;scroll-snap-align:start;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;user-select:none;-webkit-user-select:none}
+.cf-card{flex:0 0 min(360px, calc(100vw - 72px));box-sizing:border-box;scroll-snap-align:start;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;user-select:none;-webkit-user-select:none}
+.cf-card:nth-child(odd){background:#FFFFFF;color:#14213D;border:1px solid #DCE1EA;box-shadow:0 8px 24px rgba(20,33,61,0.06)}
+.cf-card:nth-child(even){background:#14213D;color:#FFFFFF;border:1px solid #14213D}
+.cf-num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px;line-height:1}
+.cf-card:nth-child(odd) .cf-num{color:#14213D}
+.cf-card:nth-child(even) .cf-num{color:#FCA311}
+.cf-card:nth-child(odd) p{color:#3E4A63}
+.cf-card:nth-child(even) p{color:#D5DBE7}
 .cf-btn{width:48px;height:48px;border-radius:50%;border:1px solid #C9D0DD;background:#FFFFFF;color:#14213D;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.cf-btn:hover:not(:disabled){background:#14213D;color:#FFFFFF;border-color:#14213D}
-.cf-btn:disabled{opacity:.35;cursor:default}
+.cf-btn:hover{background:#14213D;color:#FFFFFF;border-color:#14213D}
 .cf-btn:focus-visible,.cf-track:focus-visible{outline:3px solid #FCA311;outline-offset:4px}
-.cf-progress{height:4px;background:#E6E9F0;border-radius:4px;overflow:hidden}
-.cf-progress span{display:block;height:100%;width:0;background:#14213D;border-radius:4px;transition:width .2s}
-@media (max-width:900px){.cf-card{flex-basis:calc((100% - 24px) / 2)}}
-@media (max-width:600px){.cf-card{flex-basis:86%;padding:28px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cf-progress span,.cf-btn{transition:none}}
+@media (max-width:600px){.cf-card{padding:28px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cf-btn{transition:none}}
 </style>
 </head>
 <body>
@@ -70,7 +73,7 @@ a{color:#14213D}a:hover{color:#2B3F6B}
 </section>
 
 <section id="como-funciona">
-<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 40px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
 <div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px">
 <p style="margin: 0; font-weight: 600; color: #8A5A00; font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em">Como funciona</p>
@@ -82,47 +85,45 @@ a{color:#14213D}a:hover{color:#2B3F6B}
 <button type="button" class="cf-btn" data-cf-next aria-label="Próximo cartão" aria-controls="cf-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
 </div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 20px">
+</div>
 <div id="cf-track" class="cf-track" data-cf-track tabindex="0" role="region" aria-label="Como funcionam as aulas: use as setas do teclado ou deslize para ver mais">
-<div class="cf-card" role="group" aria-label="1 de 7" style="background: #F3F5F9;">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #14213D">01</span>
+<div class="cf-card" role="group" aria-label="1 de 7">
+<span class="cf-num">01</span>
 <h3 style="margin: 0; font-size: 21px; font-weight: 600">Aulas feitas para o seu objetivo</h3>
-<p style="margin: 0; color: #3E4A63">Esqueça turma e roteiro pronto. Cada aula é planejada para o que você precisa conquistar: passar numa entrevista, viajar sem travar ou finalmente conversar com segurança.</p>
+<p style="margin: 0">Esqueça turma e roteiro pronto. Cada aula é planejada para o que você precisa conquistar: passar numa entrevista, viajar sem travar ou finalmente conversar com segurança.</p>
 </div>
-<div class="cf-card" role="group" aria-label="2 de 7" style="background: #14213D; color: #FFFFFF;">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #FCA311">02</span>
+<div class="cf-card" role="group" aria-label="2 de 7">
+<span class="cf-num">02</span>
 <h3 style="margin: 0; font-size: 21px; font-weight: 600">Conteúdo 100% adaptável</h3>
-<p style="margin: 0; color: #D5DBE7">Se algo não está funcionando, muda na hora. Material, ritmo e exercícios se ajustam ao seu jeito de aprender, e você nunca fica preso a um livro que não conversa com você.</p>
+<p style="margin: 0">Se algo não está funcionando, muda na hora. Material, ritmo e exercícios se ajustam ao seu jeito de aprender, e você nunca fica preso a um livro que não conversa com você.</p>
 </div>
-<div class="cf-card" role="group" aria-label="3 de 7" style="background: #F3F5F9;">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #14213D">03</span>
+<div class="cf-card" role="group" aria-label="3 de 7">
+<span class="cf-num">03</span>
 <h3 style="margin: 0; font-size: 21px; font-weight: 600">Inglês para a sua vida real</h3>
-<p style="margin: 0; color: #3E4A63">Viagens, trabalho ou dia a dia: você aprende o inglês que vai usar de verdade, treinando situações como reuniões, entrevistas, check-in no hotel e conversas com estrangeiros.</p>
+<p style="margin: 0">Viagens, trabalho ou dia a dia: você aprende o inglês que vai usar de verdade, treinando situações como reuniões, entrevistas, check-in no hotel e conversas com estrangeiros.</p>
 </div>
-<div class="cf-card" role="group" aria-label="4 de 7" style="background: #F3F5F9;">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #14213D">04</span>
+<div class="cf-card" role="group" aria-label="4 de 7">
+<span class="cf-num">04</span>
 <h3 style="margin: 0; font-size: 21px; font-weight: 600">Assuntos que prendem a sua atenção</h3>
-<p style="margin: 0; color: #3E4A63">Séries, tecnologia, esportes, música, carreira: as aulas giram em torno do que você gosta. Quando o tema faz sentido, você aprende mais rápido e nem sente o tempo passar.</p>
+<p style="margin: 0">Séries, tecnologia, esportes, música, carreira: as aulas giram em torno do que você gosta. Quando o tema faz sentido, você aprende mais rápido e nem sente o tempo passar.</p>
 </div>
-<div class="cf-card" role="group" aria-label="5 de 7" style="background: #F3F5F9;">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #14213D">05</span>
+<div class="cf-card" role="group" aria-label="5 de 7">
+<span class="cf-num">05</span>
 <h3 style="margin: 0; font-size: 21px; font-weight: 600">Evolução de nível de verdade</h3>
-<p style="margin: 0; color: #3E4A63">Nada de ficar parado no mesmo ponto. Com metas claras, você avança quando domina um conteúdo e reforça exatamente onde ainda sente dificuldade.</p>
+<p style="margin: 0">Nada de ficar parado no mesmo ponto. Com metas claras, você avança quando domina um conteúdo e reforça exatamente onde ainda sente dificuldade.</p>
 </div>
-<div class="cf-card" role="group" aria-label="6 de 7" style="background: #F3F5F9;">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #14213D">06</span>
+<div class="cf-card" role="group" aria-label="6 de 7">
+<span class="cf-num">06</span>
 <h3 style="margin: 0; font-size: 21px; font-weight: 600">Acompanhamento de perto</h3>
-<p style="margin: 0; color: #3E4A63">Seu progresso é acompanhado aula a aula. Você sabe onde está, o que já conquistou e qual é o próximo passo, sem achismo.</p>
+<p style="margin: 0">Seu progresso é acompanhado aula a aula. Você sabe onde está, o que já conquistou e qual é o próximo passo, sem achismo.</p>
 </div>
-<div class="cf-card" role="group" aria-label="7 de 7" style="background: #F3F5F9;">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #14213D">07</span>
+<div class="cf-card" role="group" aria-label="7 de 7">
+<span class="cf-num">07</span>
 <h3 style="margin: 0; font-size: 21px; font-weight: 600">Aulas 100% online</h3>
-<p style="margin: 0; color: #3E4A63">Aprenda de onde estiver, sem trânsito e sem perder tempo. Basta internet e vontade de evoluir, com horários que cabem na sua rotina.</p>
+<p style="margin: 0">Aprenda de onde estiver, sem trânsito e sem perder tempo. Basta internet e vontade de evoluir, com horários que cabem na sua rotina.</p>
 </div>
 </div>
-<div class="cf-progress" aria-hidden="true"><span data-cf-bar></span></div>
-</div>
-</div>
+<div style="height: 72px"></div>
 </section>
 
 <section id="beneficios" style="background: #F3F5F9">
@@ -235,54 +236,81 @@ a{color:#14213D}a:hover{color:#2B3F6B}
   if (!track) return;
   var prev = document.querySelector('[data-cf-prev]');
   var next = document.querySelector('[data-cf-next]');
-  var bar = document.querySelector('[data-cf-bar]');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var behavior = reduce ? 'auto' : 'smooth';
 
-  function step() {
-    var card = track.querySelector('.cf-card');
-    var gap = parseFloat(getComputedStyle(track).columnGap) || 24;
-    return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+  // Loop infinito: cria 5 cópias dos 7 cartões e mantém a rolagem sempre nas cópias do meio.
+  // O salto é de 2 conjuntos (14 cartões), assim a alternância branco/azul nunca quebra.
+  var originals = Array.prototype.slice.call(track.querySelectorAll('.cf-card'));
+  var COPIES = 6;
+  for (var c = 1; c < COPIES; c++) {
+    originals.forEach(function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.removeAttribute('role');
+      clone.removeAttribute('aria-label');
+      track.appendChild(clone);
+    });
+  }
+  var cards = track.querySelectorAll('.cf-card');
+  var n = originals.length;
+
+  function pad() { return Math.max(24, (track.clientWidth - 1160) / 2 + 24); }
+  function setWidth() { return cards[n].offsetLeft - cards[0].offsetLeft; }
+  function step() { return cards[1].offsetLeft - cards[0].offsetLeft; }
+
+  function goToStart() { track.scrollLeft = cards[2 * n].offsetLeft - pad(); }
+
+  function normalize() {
+    if (dragging) return;
+    var L = setWidth(), base = cards[0].offsetLeft - pad(), pos = track.scrollLeft - base;
+    if (pos < 2 * L) track.scrollLeft += 2 * L;
+    else if (pos >= 4 * L) track.scrollLeft -= 2 * L;
   }
 
-  function update() {
-    var max = track.scrollWidth - track.clientWidth;
-    prev.disabled = track.scrollLeft <= 4;
-    next.disabled = track.scrollLeft >= max - 4;
-    bar.style.width = Math.min(100, (track.scrollLeft + track.clientWidth) / track.scrollWidth * 100) + '%';
-  }
+  var timer;
+  if ('onscrollend' in window) track.addEventListener('scrollend', normalize);
+  else track.addEventListener('scroll', function () { clearTimeout(timer); timer = setTimeout(normalize, 150); }, { passive: true });
 
   prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: behavior }); });
   next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: behavior }); });
-  track.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
-  update();
+
+  var lastW = window.innerWidth;
+  window.addEventListener('resize', function () {
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth; goToStart();
+  });
+  goToStart();
 
   // Arrastar com o mouse (no toque, o navegador já desliza sozinho)
-  var down = false, moved = false, startX = 0, startLeft = 0;
+  var down = false, dragging = false, startX = 0, startLeft = 0;
   track.addEventListener('mousedown', function (e) {
     if (e.button !== 0) return;
-    down = true; moved = false;
-    startX = e.clientX; startLeft = track.scrollLeft;
+    down = true; startX = e.clientX; startLeft = track.scrollLeft;
     e.preventDefault();
   });
   window.addEventListener('mousemove', function (e) {
     if (!down) return;
     var dx = e.clientX - startX;
-    if (!moved && Math.abs(dx) > 5) { moved = true; track.classList.add('is-dragging'); }
-    if (moved) track.scrollLeft = startLeft - dx;
+    if (!dragging && Math.abs(dx) > 5) { dragging = true; track.classList.add('is-dragging'); }
+    if (dragging) track.scrollLeft = startLeft - dx;
   });
   window.addEventListener('mouseup', function () {
     if (!down) return;
     down = false;
-    if (!moved) return;
-    var s = step();
-    track.scrollTo({ left: Math.round(track.scrollLeft / s) * s, behavior: behavior });
-    setTimeout(function () { track.classList.remove('is-dragging'); }, reduce ? 0 : 400);
+    if (!dragging) return;
+    var p = pad(), best = 0, bestD = Infinity;
+    for (var i = 0; i < cards.length; i++) {
+      var d = Math.abs(cards[i].offsetLeft - p - track.scrollLeft);
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    track.scrollTo({ left: cards[best].offsetLeft - p, behavior: behavior });
+    setTimeout(function () {
+      track.classList.remove('is-dragging');
+      dragging = false;
+      normalize();
+    }, reduce ? 0 : 450);
   });
-  track.addEventListener('click', function (e) {
-    if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
-  }, true);
 })();
 </script>
 </body>
