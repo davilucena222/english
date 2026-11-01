@@ -45,9 +45,14 @@ button:focus-visible {
 .avatar {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center;
   border-radius: 50%;
+  /* Impede que qualquer container flex estique a foto e vire elipse */
+  align-self: center;
+  flex: none;
 }
 
 .eyebrow {
@@ -240,6 +245,7 @@ button:focus-visible {
   min-width: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero__photo {
@@ -505,13 +511,14 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background .2s, color .2s, border-color .2s;
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
 }
 
 .cf-btn:hover {
   background: #14213D;
   color: #FFFFFF;
   border-color: #14213D;
+  transform: scale(1.08);
 }
 
 .cf-btn:focus-visible,
@@ -796,13 +803,116 @@ button:focus-visible {
   gap: 20px;
 }
 
+/* ===== Animações de hover ===== */
+.feat-card,
+.benefit-card {
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.feat-card:hover {
+  transform: translateY(-4px);
+  border-color: #FCA311;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(20, 33, 61, 0.12);
+}
+
+.icon-badge {
+  transition: transform .2s ease;
+}
+
+.feat-card:hover .icon-badge,
+.benefit-card:hover .icon-badge {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.cf-track:not(.is-dragging) .cf-card {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.cf-track:not(.is-dragging) .cf-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(20, 33, 61, 0.18);
+}
+
+.btn-primary,
+.btn-ghost,
+.nav-cta,
+.cta-btn--form,
+.wa-btn {
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.btn-primary:hover,
+.nav-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(43, 63, 107, 0.45), 0 18px 38px rgba(20, 33, 61, 0.45);
+  filter: brightness(1.15);
+}
+
+.cta-btn--form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 26px rgba(252, 163, 17, 0.7), 0 18px 44px rgba(252, 163, 17, 0.55);
+  filter: brightness(1.08);
+}
+
+.wa-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(37, 211, 102, 0.45), 0 16px 36px rgba(37, 211, 102, 0.3);
+  filter: brightness(1.1);
+}
+
+.btn-ghost:hover {
+  transform: translateX(3px);
+}
+
+.btn-primary svg,
+.cta-btn--form svg {
+  transition: transform .2s ease;
+}
+
+.btn-primary:hover svg,
+.cta-btn--form:hover svg {
+  transform: translateX(4px);
+}
+
 /* ===== Preferência de movimento reduzido ===== */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .cf-btn {
+  .cf-btn,
+  .feat-card,
+  .benefit-card,
+  .cf-card,
+  .icon-badge,
+  .btn-primary,
+  .btn-ghost,
+  .nav-cta,
+  .cta-btn--form,
+  .wa-btn,
+  .btn-primary svg,
+  .cta-btn--form svg {
     transition: none;
+  }
+
+  .cf-btn:hover,
+  .feat-card:hover,
+  .benefit-card:hover,
+  .cf-track:not(.is-dragging) .cf-card:hover,
+  .btn-primary:hover,
+  .btn-ghost:hover,
+  .nav-cta:hover,
+  .cta-btn--form:hover,
+  .wa-btn:hover,
+  .feat-card:hover .icon-badge,
+  .benefit-card:hover .icon-badge,
+  .btn-primary:hover svg,
+  .cta-btn--form:hover svg {
+    transform: none;
   }
 }
