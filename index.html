@@ -1,375 +1,348 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aulas de Inglês sob medida</title>
-<meta name="description" content="Aulas particulares de inglês que se adaptam ao seu ritmo e aos seus objetivos.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-html{scroll-behavior:smooth}
-body{margin:0}
-a{color:#14213D}a:hover{color:#2B3F6B}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.wa-btn:hover{background:rgba(255,255,255,0.1)!important;border-color:#FFFFFF!important}
-@media (max-width:600px){.cta-actions{flex:1 1 100%!important}.cta-btn{padding:16px 20px!important;font-size:16px!important;white-space:nowrap}}
-.wa-btn:focus-visible{outline:3px solid #FCA311;outline-offset:3px}
-.feat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-@media (max-width:900px){.feat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.feat-grid{grid-template-columns:1fr}}
-/* Carrossel "Como funciona" (infinito, de ponta a ponta da tela) */
-.cf-track{--cf-pad:max(24px, calc((100% - 1160px) / 2 + 24px));position:relative;display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--cf-pad);padding:8px var(--cf-pad) 32px;scrollbar-width:none;cursor:grab;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
-.cf-track::-webkit-scrollbar{display:none}
-.cf-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
-.cf-card{flex:0 0 min(360px, calc(100vw - 72px));box-sizing:border-box;scroll-snap-align:start;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;user-select:none;-webkit-user-select:none}
-.cf-card:nth-child(odd){background:#FFFFFF;color:#14213D;border:1px solid #DCE1EA;box-shadow:0 8px 24px rgba(20,33,61,0.06)}
-.cf-card:nth-child(even){background:#14213D;color:#FFFFFF;border:1px solid #14213D}
-.cf-num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px;line-height:1}
-.cf-card:nth-child(odd) .cf-num{color:#14213D}
-.cf-card:nth-child(even) .cf-num{color:#FCA311}
-.cf-card:nth-child(odd) p{color:#3E4A63}
-.cf-card:nth-child(even) p{color:#D5DBE7}
-.cf-btn{width:48px;height:48px;border-radius:50%;border:1px solid #C9D0DD;background:#FFFFFF;color:#14213D;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.cf-btn:hover{background:#14213D;color:#FFFFFF;border-color:#14213D}
-.cf-btn:focus-visible,.cf-track:focus-visible{outline:3px solid #FCA311;outline-offset:4px}
-@media (max-width:600px){.cf-card{padding:28px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cf-btn{transition:none}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aulas de Inglês sob medida</title>
+  <meta name="description" content="Aulas particulares de inglês que se adaptam ao seu ritmo e aos seus objetivos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<div style="font-family: 'Inter', system-ui, sans-serif; color: #14213D; background: #FFFFFF; line-height: 1.55">
+  <div class="page">
 
-<header style="border-bottom: 1px solid #E6E9F0; background: #FFFFFF">
-<div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="#topo" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; text-decoration: none; color: #14213D"><span style="color: #8A5A00">English</span> with Davi</a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 15px; font-weight: 500">
-<a href="#como-funciona" style="text-decoration: none">Como funciona</a>
-<a href="#beneficios" style="text-decoration: none">Benefícios</a>
-<a href="#sobre" style="text-decoration: none">Sobre mim</a>
-<a href="#contato" style="text-decoration: none; background: #14213D; color: #FFFFFF; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Quero começar</a>
-</nav>
-</div>
-</header>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a href="#topo" class="brand"><span class="brand__accent">English</span> with Davi</a>
+        <nav aria-label="Principal" class="main-nav">
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#beneficios">Benefícios</a>
+          <a href="#sobre">Sobre mim</a>
+          <a href="#contato" class="nav-cta">Quero começar</a>
+        </nav>
+      </div>
+    </header>
 
-<section id="topo" style="background: #F3F5F9">
-<div style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
-<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; display: inline-flex; align-self: flex-start; background: #FCA311; color: #14213D; font-weight: 600; font-size: 14px; padding: 6px 14px; border-radius: 999px">Aulas particulares de inglês</p>
-<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(40px, 5.2vw, 64px); line-height: 1.04; letter-spacing: -0.02em">Inglês no seu ritmo, com aulas que se adaptam a você.</h1>
-<p style="margin: 0; font-size: 19px; color: #3E4A63; max-width: 540px">Nada de apostila igual para todo mundo. Eu acompanho como você aprende e ajusto o conteúdo a cada aula, para você evoluir de verdade e com confiança.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
-<a href="#contato" style="text-decoration: none; background: #14213D; color: #FFFFFF; font-weight: 600; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px">Preencher o formulário
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<a href="#como-funciona" style="font-weight: 600; font-size: 16px; padding: 14px 8px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Ver como funciona</a>
-</div>
-</div>
-<div style="flex: 1 1 360px; min-width: 0; display: flex; justify-content: center">
-<div style="position: relative; width: 100%; max-width: 420px">
-<img src="davi.jpeg" alt="Foto de [Seu Nome]" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%">
-<div style="position: absolute; left: -16px; bottom: 28px; background: #FFFFFF; border-radius: 16px; padding: 14px 18px; box-shadow: 0 10px 30px rgba(20,33,61,0.14); display: flex; align-items: center; gap: 12px">
-<span style="width: 40px; height: 40px; border-radius: 50%; background: #FCA311; display: inline-flex; align-items: center; justify-content: center">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
-</span>
-<span style="font-size: 14px; line-height: 1.3"><strong style="display: block; font-size: 15px">Conteúdo que se adapta</strong>ajustado a cada aula</span>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <section id="topo" class="hero">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="badge-pill">Aulas particulares de inglês</p>
+          <h1 class="hero__title">Inglês no seu ritmo, com aulas que se adaptam a você.</h1>
+          <p class="hero__text">Nada de apostila igual para todo mundo. Eu acompanho como você aprende e ajusto o conteúdo a cada aula, para você evoluir de verdade e com confiança.</p>
+          <div class="hero__actions">
+            <a href="#contato" class="btn-primary">Preencher o formulário
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#como-funciona" class="btn-ghost">Ver como funciona</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <div class="hero__photo">
+            <img src="davi.jpeg" alt="Foto de [Seu Nome]" class="avatar">
+            <div class="hero__card">
+              <span class="hero__card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+              </span>
+              <span class="hero__card-text"><strong>Conteúdo que se adapta</strong>ajustado a cada aula</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="apresentacao" style="background: #14213D; color: #FFFFFF">
-<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; max-width: 720px; margin: 0 auto">
-<p style="margin: 0; font-weight: 600; color: #FCA311; font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em">Conheça seu professor</p>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1">Por que aprender inglês comigo?</h2>
-<p style="margin: 0; font-size: 18px; color: #D5DBE7">Em poucos minutos, eu conto quem sou, como funcionam as aulas e o que você pode esperar da sua evolução.</p>
-</div>
-<div style="width: 100%; max-width: 960px; margin: 0 auto; border-radius: 24px; overflow: hidden; border: 1px solid #2B3D63; box-shadow: 0 24px 60px rgba(0,0,0,0.35); background: #0E1730">
-<video controls playsinline preload="metadata" poster="video/apresentacao-capa.jpg" style="display: block; width: 100%; aspect-ratio: 16 / 9; background: #0E1730">
-<source src="video/apresentacao.mp4" type="video/mp4">
-Seu navegador não consegue reproduzir este vídeo.
-</video>
-</div>
-<div class="feat-grid">
-<div style="background: #1C2C4F; border: 1px solid #2B3D63; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<span style="width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
-<h3 style="margin: 0; font-size: 19px; font-weight: 600; color: #FFFFFF">Inglês de quem usa no trabalho</h3>
-<p style="margin: 0; color: #C5CDDD">Uso o inglês todos os dias com times internacionais. Você aprende com quem vive o idioma na prática, não só na teoria.</p>
-</div>
-<div style="background: #1C2C4F; border: 1px solid #2B3D63; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<span style="width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></span>
-<h3 style="margin: 0; font-size: 19px; font-weight: 600; color: #FFFFFF">O caminho de quem aprendeu sozinho</h3>
-<p style="margin: 0; color: #C5CDDD">Aprendi por conta própria desde os 15 anos. Conheço os atalhos que funcionam e as armadilhas que fazem tanta gente desistir.</p>
-</div>
-<div style="background: #1C2C4F; border: 1px solid #2B3D63; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<span style="width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>
-<h3 style="margin: 0; font-size: 19px; font-weight: 600; color: #FFFFFF">Aula 100% individual</h3>
-<p style="margin: 0; color: #C5CDDD">Nada de dividir a atenção com uma turma. Cada minuto da aula é seu: suas dúvidas, sua fala, seu ritmo.</p>
-</div>
-<div style="background: #1C2C4F; border: 1px solid #2B3D63; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<span style="width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
-<h3 style="margin: 0; font-size: 19px; font-weight: 600; color: #FFFFFF">Foco em falar com confiança</h3>
-<p style="margin: 0; color: #C5CDDD">Você pratica conversação desde as primeiras aulas, perde o medo de errar e começa a se comunicar de verdade.</p>
-</div>
-<div style="background: #1C2C4F; border: 1px solid #2B3D63; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<span style="width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
-<h3 style="margin: 0; font-size: 19px; font-weight: 600; color: #FFFFFF">Preparação para a carreira</h3>
-<p style="margin: 0; color: #C5CDDD">Entrevistas, reuniões, e-mails e apresentações: o inglês que abre portas no mercado, inclusive na área de tecnologia.</p>
-</div>
-<div style="background: #1C2C4F; border: 1px solid #2B3D63; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<span style="width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-<h3 style="margin: 0; font-size: 19px; font-weight: 600; color: #FFFFFF">Online, de onde você estiver</h3>
-<p style="margin: 0; color: #C5CDDD">Sem trânsito e sem perder tempo. Basta uma conexão com a internet para ter aula em casa, no trabalho ou viajando.</p>
-</div>
-</div>
-</div>
-</section>
+    <section id="apresentacao" class="intro">
+      <div class="intro__inner">
+        <div class="intro__head">
+          <p class="eyebrow eyebrow--light">Conheça seu professor</p>
+          <h2 class="section-title">Por que aprender inglês comigo?</h2>
+          <p class="intro__lead">Em poucos minutos, eu conto quem sou, como funcionam as aulas e o que você pode esperar da sua evolução.</p>
+        </div>
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="video/apresentacao-capa.jpg" class="video">
+            <source src="video/apresentacao.mp4" type="video/mp4">
+            Seu navegador não consegue reproduzir este vídeo.
+          </video>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+            <h3>Inglês de quem usa no trabalho</h3>
+            <p>Uso o inglês todos os dias com times internacionais. Você aprende com quem vive o idioma na prática, não só na teoria.</p>
+          </div>
+          <div class="feat-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></span>
+            <h3>O caminho de quem aprendeu sozinho</h3>
+            <p>Aprendi por conta própria desde os 15 anos. Conheço os atalhos que funcionam e as armadilhas que fazem tanta gente desistir.</p>
+          </div>
+          <div class="feat-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>
+            <h3>Aula 100% individual</h3>
+            <p>Nada de dividir a atenção com uma turma. Cada minuto da aula é seu: suas dúvidas, sua fala, seu ritmo.</p>
+          </div>
+          <div class="feat-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+            <h3>Foco em falar com confiança</h3>
+            <p>Você pratica conversação desde as primeiras aulas, perde o medo de errar e começa a se comunicar de verdade.</p>
+          </div>
+          <div class="feat-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+            <h3>Preparação para a carreira</h3>
+            <p>Entrevistas, reuniões, e-mails e apresentações: o inglês que abre portas no mercado, inclusive na área de tecnologia.</p>
+          </div>
+          <div class="feat-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+            <h3>Online, de onde você estiver</h3>
+            <p>Sem trânsito e sem perder tempo. Basta uma conexão com a internet para ter aula em casa, no trabalho ou viajando.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="como-funciona">
-<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 40px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px">
-<p style="margin: 0; font-weight: 600; color: #8A5A00; font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em">Como funciona</p>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1">Um caminho feito para você, que muda conforme você avança</h2>
-<p style="margin: 0; font-size: 18px; color: #3E4A63">Aqui o curso se molda a você, e não o contrário. Deslize e veja como cada detalhe das aulas é pensado para o seu objetivo.</p>
-</div>
-<div style="display: flex; gap: 12px">
-<button type="button" class="cf-btn" data-cf-prev aria-label="Cartão anterior" aria-controls="cf-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
-<button type="button" class="cf-btn" data-cf-next aria-label="Próximo cartão" aria-controls="cf-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-</div>
-</div>
-</div>
-<div id="cf-track" class="cf-track" data-cf-track tabindex="0" role="region" aria-label="Como funcionam as aulas: use as setas do teclado ou deslize para ver mais">
-<div class="cf-card" role="group" aria-label="1 de 7">
-<span class="cf-num">01</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 600">Aulas feitas para o seu objetivo</h3>
-<p style="margin: 0">Esqueça turma e roteiro pronto. Cada aula é planejada para o que você precisa conquistar: passar numa entrevista, viajar sem travar ou finalmente conversar com segurança.</p>
-</div>
-<div class="cf-card" role="group" aria-label="2 de 7">
-<span class="cf-num">02</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 600">Conteúdo 100% adaptável</h3>
-<p style="margin: 0">Se algo não está funcionando, muda na hora. Material, ritmo e exercícios se ajustam ao seu jeito de aprender, e você nunca fica preso a um livro que não conversa com você.</p>
-</div>
-<div class="cf-card" role="group" aria-label="3 de 7">
-<span class="cf-num">03</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 600">Inglês para a sua vida real</h3>
-<p style="margin: 0">Viagens, trabalho ou dia a dia: você aprende o inglês que vai usar de verdade, treinando situações como reuniões, entrevistas, check-in no hotel e conversas com estrangeiros.</p>
-</div>
-<div class="cf-card" role="group" aria-label="4 de 7">
-<span class="cf-num">04</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 600">Assuntos que prendem a sua atenção</h3>
-<p style="margin: 0">Séries, tecnologia, esportes, música, carreira: as aulas giram em torno do que você gosta. Quando o tema faz sentido, você aprende mais rápido e nem sente o tempo passar.</p>
-</div>
-<div class="cf-card" role="group" aria-label="5 de 7">
-<span class="cf-num">05</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 600">Evolução de nível de verdade</h3>
-<p style="margin: 0">Nada de ficar parado no mesmo ponto. Com metas claras, você avança quando domina um conteúdo e reforça exatamente onde ainda sente dificuldade.</p>
-</div>
-<div class="cf-card" role="group" aria-label="6 de 7">
-<span class="cf-num">06</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 600">Acompanhamento de perto</h3>
-<p style="margin: 0">Seu progresso é acompanhado aula a aula. Você sabe onde está, o que já conquistou e qual é o próximo passo, sem achismo.</p>
-</div>
-<div class="cf-card" role="group" aria-label="7 de 7">
-<span class="cf-num">07</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 600">Aulas 100% online</h3>
-<p style="margin: 0">Aprenda de onde estiver, sem trânsito e sem perder tempo. Basta internet e vontade de evoluir, com horários que cabem na sua rotina.</p>
-</div>
-</div>
-<div style="height: 72px"></div>
-</section>
+    <section id="como-funciona">
+      <div class="how__inner">
+        <div class="how__head">
+          <div class="how__intro">
+            <p class="eyebrow">Como funciona</p>
+            <h2 class="section-title">Um caminho feito para você, que muda conforme você avança</h2>
+            <p class="how__lead">Aqui o curso se molda a você, e não o contrário. Deslize e veja como cada detalhe das aulas é pensado para o seu objetivo.</p>
+          </div>
+          <div class="how__nav">
+            <button type="button" class="cf-btn" data-cf-prev aria-label="Cartão anterior" aria-controls="cf-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="cf-btn" data-cf-next aria-label="Próximo cartão" aria-controls="cf-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div id="cf-track" class="cf-track" data-cf-track tabindex="0" role="region" aria-label="Como funcionam as aulas: use as setas do teclado ou deslize para ver mais">
+        <div class="cf-card" role="group" aria-label="1 de 7">
+          <span class="cf-num">01</span>
+          <h3>Aulas feitas para o seu objetivo</h3>
+          <p>Esqueça turma e roteiro pronto. Cada aula é planejada para o que você precisa conquistar: passar numa entrevista, viajar sem travar ou finalmente conversar com segurança.</p>
+        </div>
+        <div class="cf-card" role="group" aria-label="2 de 7">
+          <span class="cf-num">02</span>
+          <h3>Conteúdo 100% adaptável</h3>
+          <p>Se algo não está funcionando, muda na hora. Material, ritmo e exercícios se ajustam ao seu jeito de aprender, e você nunca fica preso a um livro que não conversa com você.</p>
+        </div>
+        <div class="cf-card" role="group" aria-label="3 de 7">
+          <span class="cf-num">03</span>
+          <h3>Inglês para a sua vida real</h3>
+          <p>Viagens, trabalho ou dia a dia: você aprende o inglês que vai usar de verdade, treinando situações como reuniões, entrevistas, check-in no hotel e conversas com estrangeiros.</p>
+        </div>
+        <div class="cf-card" role="group" aria-label="4 de 7">
+          <span class="cf-num">04</span>
+          <h3>Assuntos que prendem a sua atenção</h3>
+          <p>Séries, tecnologia, esportes, música, carreira: as aulas giram em torno do que você gosta. Quando o tema faz sentido, você aprende mais rápido e nem sente o tempo passar.</p>
+        </div>
+        <div class="cf-card" role="group" aria-label="5 de 7">
+          <span class="cf-num">05</span>
+          <h3>Evolução de nível de verdade</h3>
+          <p>Nada de ficar parado no mesmo ponto. Com metas claras, você avança quando domina um conteúdo e reforça exatamente onde ainda sente dificuldade.</p>
+        </div>
+        <div class="cf-card" role="group" aria-label="6 de 7">
+          <span class="cf-num">06</span>
+          <h3>Acompanhamento de perto</h3>
+          <p>Seu progresso é acompanhado aula a aula. Você sabe onde está, o que já conquistou e qual é o próximo passo, sem achismo.</p>
+        </div>
+        <div class="cf-card" role="group" aria-label="7 de 7">
+          <span class="cf-num">07</span>
+          <h3>Aulas 100% online</h3>
+          <p>Aprenda de onde estiver, sem trânsito e sem perder tempo. Basta internet e vontade de evoluir, com horários que cabem na sua rotina.</p>
+        </div>
+      </div>
+      <div class="how__spacer"></div>
+    </section>
 
-<section id="beneficios" style="background: #F3F5F9">
-<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
-<p style="margin: 0; font-weight: 600; color: #8A5A00; font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em">Benefícios</p>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1">Por que aprender comigo</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
-<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; gap: 18px; align-items: flex-start">
-<span style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg></span>
-<div style="display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">Foco no seu objetivo</h3><p style="margin: 0; color: #3E4A63">Cada aula aponta para o que você quer alcançar com o inglês.</p></div>
-</div>
-<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; gap: 18px; align-items: flex-start">
-<span style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
-<div style="display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">Conteúdo que evolui com você</h3><p style="margin: 0; color: #3E4A63">O material muda conforme seu progresso, sem pular etapas nem travar.</p></div>
-</div>
-<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; gap: 18px; align-items: flex-start">
-<span style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-<div style="display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">Mais conversa, menos decoreba</h3><p style="margin: 0; color: #3E4A63">Você pratica falando desde o começo, em situações reais.</p></div>
-</div>
-<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; gap: 18px; align-items: flex-start">
-<span style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
-<div style="display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">Horários flexíveis</h3><p style="margin: 0; color: #3E4A63">Aulas online, encaixadas na sua rotina. [ajuste conforme sua agenda]</p></div>
-</div>
-<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; gap: 18px; align-items: flex-start">
-<span style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
-<div style="display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">Atenção individual</h3><p style="margin: 0; color: #3E4A63">Suas dúvidas viram parte da aula. Nada fica para trás.</p></div>
-</div>
-<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; gap: 18px; align-items: flex-start">
-<span style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FCA311; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
-<div style="display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">Progresso que você enxerga</h3><p style="margin: 0; color: #3E4A63">Revisamos juntos o que você já conquistou e o próximo passo.</p></div>
-</div>
-</div>
-</div>
-</section>
+    <section id="beneficios" class="benefits">
+      <div class="benefits__inner">
+        <div class="benefits__head">
+          <p class="eyebrow">Benefícios</p>
+          <h2 class="section-title">Por que aprender comigo</h2>
+        </div>
+        <div class="card-grid">
+          <div class="benefit-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg></span>
+            <div class="benefit-card__text"><h3>Foco no seu objetivo</h3><p>Cada aula aponta para o que você quer alcançar com o inglês.</p></div>
+          </div>
+          <div class="benefit-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+            <div class="benefit-card__text"><h3>Conteúdo que evolui com você</h3><p>O material muda conforme seu progresso, sem pular etapas nem travar.</p></div>
+          </div>
+          <div class="benefit-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+            <div class="benefit-card__text"><h3>Mais conversa, menos decoreba</h3><p>Você pratica falando desde o começo, em situações reais.</p></div>
+          </div>
+          <div class="benefit-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+            <div class="benefit-card__text"><h3>Horários flexíveis</h3><p>Aulas online, encaixadas na sua rotina. [ajuste conforme sua agenda]</p></div>
+          </div>
+          <div class="benefit-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+            <div class="benefit-card__text"><h3>Atenção individual</h3><p>Suas dúvidas viram parte da aula. Nada fica para trás.</p></div>
+          </div>
+          <div class="benefit-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+            <div class="benefit-card__text"><h3>Progresso que você enxerga</h3><p>Revisamos juntos o que você já conquistou e o próximo passo.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="sobre">
-<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
-<div style="flex: 1 1 300px; min-width: 0; max-width: 380px">
-<img src="davi.jpeg" alt="Foto de [Seu Nome]" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%">
-</div>
-<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; font-weight: 600; color: #8A5A00; font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em">Sobre mim</p>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1">Oi, eu sou Davi Luiz!</h2>
-<p style="margin: 0; font-size: 18px; color: #3E4A63; text-align: justify">Estudo inglês desde os 15 anos e aprendi sozinho, testando o que funcionava para mim e descartando o que não funcionava. Hoje, formado em Ciência da Computação, uso o inglês todos os dias trabalhando com times internacionais, em reuniões, mensagens e projetos reais.</p>
-<p style="margin: 0; font-size: 18px; color: #3E4A63">Essa trajetória me ensinou que cada pessoa aprende de um jeito. Por isso, minhas aulas partem de você: do seu ritmo, dos seus interesses e das suas metas.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 10px">
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">Ciência da Computação</span>
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">Times internacionais</span>
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">Aulas online</span>
-<div style="display: flex; flex-wrap: wrap; gap: 10px">
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">Inglês no trabalho com times internacionais</span>
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">Mais de [X] anos estudando inglês</span>
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">Aulas online</span>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 10px">
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">[Certificação]</span>
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">[Anos de experiência]</span>
-<span style="border: 1px solid #C9D0DD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500">Aulas online</span>
-</div>
-</div>
-</div>
-</section>
+    <section id="sobre">
+      <div class="about__inner">
+        <div class="about__media">
+          <img src="davi.jpeg" alt="Foto de [Seu Nome]" class="avatar">
+        </div>
+        <div class="about__content">
+          <p class="eyebrow">Sobre mim</p>
+          <h2 class="section-title">Oi, eu sou Davi Luiz!</h2>
+          <p class="about__text about__text--justify">Estudo inglês desde os 15 anos e aprendi sozinho, testando o que funcionava para mim e descartando o que não funcionava. Hoje, formado em Ciência da Computação, uso o inglês todos os dias trabalhando com times internacionais, em reuniões, mensagens e projetos reais.</p>
+          <p class="about__text">Essa trajetória me ensinou que cada pessoa aprende de um jeito. Por isso, minhas aulas partem de você: do seu ritmo, dos seus interesses e das suas metas.</p>
+          <div class="tags">
+            <span class="tag">Ciência da Computação</span>
+            <span class="tag">Times internacionais</span>
+            <span class="tag">Aulas online</span>
+            <div class="tags">
+              <span class="tag">Inglês no trabalho com times internacionais</span>
+              <span class="tag">Mais de [X] anos estudando inglês</span>
+              <span class="tag">Aulas online</span>
+            </div>
+            <div class="tags">
+              <span class="tag">[Certificação]</span>
+              <span class="tag">[Anos de experiência]</span>
+              <span class="tag">Aulas online</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section style="background: #F3F5F9">
-<div style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 3vw, 36px); line-height: 1.15">O que dizem meus alunos</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
-<figure style="margin: 0; background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
-<blockquote style="margin: 0; font-size: 17px">[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-<figcaption style="font-weight: 600; font-size: 15px">[Nome do aluno] <span style="font-weight: 400; color: #4A5672">· [objetivo]</span></figcaption>
-</figure>
-<figure style="margin: 0; background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
-<blockquote style="margin: 0; font-size: 17px">[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-<figcaption style="font-weight: 600; font-size: 15px">[Nome do aluno] <span style="font-weight: 400; color: #4A5672">· [objetivo]</span></figcaption>
-</figure>
-<figure style="margin: 0; background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
-<blockquote style="margin: 0; font-size: 17px">[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-<figcaption style="font-weight: 600; font-size: 15px">[Nome do aluno] <span style="font-weight: 400; color: #4A5672">· [objetivo]</span></figcaption>
-</figure>
-</div>
-</div>
-</section>
+    <section class="testimonials">
+      <div class="testimonials__inner">
+        <h2 class="section-title section-title--sm">O que dizem meus alunos</h2>
+        <div class="card-grid">
+          <figure class="quote-card">
+            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
+            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
+            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
+            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-<section id="contato">
-<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px">
-<div style="background: #14213D; color: #FFFFFF; border-radius: 32px; padding: clamp(40px, 6vw, 72px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px">
-<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.08">Vamos montar o seu plano de inglês?</h2>
-<p style="margin: 0; font-size: 18px; color: #D5DBE7">Preencha um formulário rápido contando seu nível e seus objetivos. Eu entro em contato para combinarmos a primeira aula.</p>
-</div>
-<div class="cta-actions" style="flex: 0 1 auto; display: flex; flex-direction: column; gap: 12px">
-<a href="https://forms.gle/3znX6adFS7dr57xXA" target="_blank" rel="noopener" class="cta-btn" style="text-decoration: none; background: #FCA311; color: #14213D; font-weight: 700; font-size: 18px; padding: 20px 32px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 10px">Preencher o formulário
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only">(abre em nova aba)</span></a>
-<a href="https://wa.me/5583981961353?text=Ol%C3%A1%2C%20Davi!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20as%20aulas%20de%20ingl%C3%AAs." target="_blank" rel="noopener" class="wa-btn cta-btn" style="text-decoration: none; background: transparent; color: #FFFFFF; font-weight: 600; font-size: 17px; padding: 18px 32px; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Falar comigo no WhatsApp<span class="sr-only">(abre em nova aba)</span></a>
-</div>
-</div>
-</div>
-</section>
+    <section id="contato" class="contact">
+      <div class="contact__inner">
+        <div class="contact__card">
+          <div class="contact__content">
+            <h2 class="contact__title">Vamos montar o seu plano de inglês?</h2>
+            <p class="contact__text">Preencha um formulário rápido contando seu nível e seus objetivos. Eu entro em contato para combinarmos a primeira aula.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="https://forms.gle/3znX6adFS7dr57xXA" target="_blank" rel="noopener" class="cta-btn cta-btn--form">Preencher o formulário
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only">(abre em nova aba)</span></a>
+            <a href="https://wa.me/5583981961353?text=Ol%C3%A1%2C%20Davi!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20as%20aulas%20de%20ingl%C3%AAs." target="_blank" rel="noopener" class="cta-btn wa-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Falar comigo no WhatsApp<span class="sr-only">(abre em nova aba)</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer style="border-top: 1px solid #E6E9F0">
-<div style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #4A5672">
-<span>© 2026 English with Davi</span>
-<span style="display: flex; flex-wrap: wrap; gap: 20px"><a target="_blank" rel="noopener" href="https://www.instagram.com/dev.daviluiz?xtok=MXR1dnFjaHNxamZ4bQ%3D%3D&utm_source=qr">Instagram</a><a target="_blank" rel="noopener" href="https://wa.me/5583981961353?text=Ol%C3%A1%2C%20Davi!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20as%20aulas%20de%20ingl%C3%AAs.">WhatsApp</a><a href="mailto:davilucena222@gmail.com?subject=Aulas%20de%20ingl%C3%AAs&body=Ol%C3%A1%2C%20Davi!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20as%20aulas%20de%20ingl%C3%AAs.">E-mail</a></span>
-</div>
-</footer>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span>© 2026 English with Davi</span>
+        <span class="site-footer__social"><a target="_blank" rel="noopener" href="https://www.instagram.com/dev.daviluiz?xtok=MXR1dnFjaHNxamZ4bQ%3D%3D&utm_source=qr">Instagram</a><a target="_blank" rel="noopener" href="https://wa.me/5583981961353?text=Ol%C3%A1%2C%20Davi!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20as%20aulas%20de%20ingl%C3%AAs.">WhatsApp</a><a href="mailto:davilucena222@gmail.com?subject=Aulas%20de%20ingl%C3%AAs&body=Ol%C3%A1%2C%20Davi!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20as%20aulas%20de%20ingl%C3%AAs.">E-mail</a></span>
+      </div>
+    </footer>
 
-</div>
-<script>
-(function () {
-  var track = document.querySelector('[data-cf-track]');
-  if (!track) return;
-  var prev = document.querySelector('[data-cf-prev]');
-  var next = document.querySelector('[data-cf-next]');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var behavior = reduce ? 'auto' : 'smooth';
+  </div>
+  <script>
+    (function () {
+      var track = document.querySelector('[data-cf-track]');
+      if (!track) return;
+      var prev = document.querySelector('[data-cf-prev]');
+      var next = document.querySelector('[data-cf-next]');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var behavior = reduce ? 'auto' : 'smooth';
 
-  // Loop infinito: cria 5 cópias dos 7 cartões e mantém a rolagem sempre nas cópias do meio.
-  // O salto é de 2 conjuntos (14 cartões), assim a alternância branco/azul nunca quebra.
-  var originals = Array.prototype.slice.call(track.querySelectorAll('.cf-card'));
-  var COPIES = 6;
-  for (var c = 1; c < COPIES; c++) {
-    originals.forEach(function (card) {
-      var clone = card.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      clone.removeAttribute('role');
-      clone.removeAttribute('aria-label');
-      track.appendChild(clone);
-    });
-  }
-  var cards = track.querySelectorAll('.cf-card');
-  var n = originals.length;
+      // Loop infinito: cria 5 cópias dos 7 cartões e mantém a rolagem sempre nas cópias do meio.
+      // O salto é de 2 conjuntos (14 cartões), assim a alternância branco/azul nunca quebra.
+      var originals = Array.prototype.slice.call(track.querySelectorAll('.cf-card'));
+      var COPIES = 6;
+      for (var c = 1; c < COPIES; c++) {
+        originals.forEach(function (card) {
+          var clone = card.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          clone.removeAttribute('role');
+          clone.removeAttribute('aria-label');
+          track.appendChild(clone);
+        });
+      }
+      var cards = track.querySelectorAll('.cf-card');
+      var n = originals.length;
 
-  function pad() { return Math.max(24, (track.clientWidth - 1160) / 2 + 24); }
-  function setWidth() { return cards[n].offsetLeft - cards[0].offsetLeft; }
-  function step() { return cards[1].offsetLeft - cards[0].offsetLeft; }
+      function pad() { return Math.max(24, (track.clientWidth - 1160) / 2 + 24); }
+      function setWidth() { return cards[n].offsetLeft - cards[0].offsetLeft; }
+      function step() { return cards[1].offsetLeft - cards[0].offsetLeft; }
 
-  function goToStart() { track.scrollLeft = cards[2 * n].offsetLeft - pad(); }
+      function goToStart() { track.scrollLeft = cards[2 * n].offsetLeft - pad(); }
 
-  function normalize() {
-    if (dragging) return;
-    var L = setWidth(), base = cards[0].offsetLeft - pad(), pos = track.scrollLeft - base;
-    if (pos < 2 * L) track.scrollLeft += 2 * L;
-    else if (pos >= 4 * L) track.scrollLeft -= 2 * L;
-  }
+      function normalize() {
+        if (dragging) return;
+        var L = setWidth(), base = cards[0].offsetLeft - pad(), pos = track.scrollLeft - base;
+        if (pos < 2 * L) track.scrollLeft += 2 * L;
+        else if (pos >= 4 * L) track.scrollLeft -= 2 * L;
+      }
 
-  var timer;
-  if ('onscrollend' in window) track.addEventListener('scrollend', normalize);
-  else track.addEventListener('scroll', function () { clearTimeout(timer); timer = setTimeout(normalize, 150); }, { passive: true });
+      var timer;
+      if ('onscrollend' in window) track.addEventListener('scrollend', normalize);
+      else track.addEventListener('scroll', function () { clearTimeout(timer); timer = setTimeout(normalize, 150); }, { passive: true });
 
-  prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: behavior }); });
-  next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: behavior }); });
+      prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: behavior }); });
+      next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: behavior }); });
 
-  var lastW = window.innerWidth;
-  window.addEventListener('resize', function () {
-    if (window.innerWidth === lastW) return;
-    lastW = window.innerWidth; goToStart();
-  });
-  goToStart();
+      var lastW = window.innerWidth;
+      window.addEventListener('resize', function () {
+        if (window.innerWidth === lastW) return;
+        lastW = window.innerWidth; goToStart();
+      });
+      goToStart();
 
-  // Arrastar com o mouse (no toque, o navegador já desliza sozinho)
-  var down = false, dragging = false, startX = 0, startLeft = 0;
-  track.addEventListener('mousedown', function (e) {
-    if (e.button !== 0) return;
-    down = true; startX = e.clientX; startLeft = track.scrollLeft;
-    e.preventDefault();
-  });
-  window.addEventListener('mousemove', function (e) {
-    if (!down) return;
-    var dx = e.clientX - startX;
-    if (!dragging && Math.abs(dx) > 5) { dragging = true; track.classList.add('is-dragging'); }
-    if (dragging) track.scrollLeft = startLeft - dx;
-  });
-  window.addEventListener('mouseup', function () {
-    if (!down) return;
-    down = false;
-    if (!dragging) return;
-    var p = pad(), best = 0, bestD = Infinity;
-    for (var i = 0; i < cards.length; i++) {
-      var d = Math.abs(cards[i].offsetLeft - p - track.scrollLeft);
-      if (d < bestD) { bestD = d; best = i; }
-    }
-    track.scrollTo({ left: cards[best].offsetLeft - p, behavior: behavior });
-    setTimeout(function () {
-      track.classList.remove('is-dragging');
-      dragging = false;
-      normalize();
-    }, reduce ? 0 : 450);
-  });
-})();
-</script>
+      // Arrastar com o mouse (no toque, o navegador já desliza sozinho)
+      var down = false, dragging = false, startX = 0, startLeft = 0;
+      track.addEventListener('mousedown', function (e) {
+        if (e.button !== 0) return;
+        down = true; startX = e.clientX; startLeft = track.scrollLeft;
+        e.preventDefault();
+      });
+      window.addEventListener('mousemove', function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        if (!dragging && Math.abs(dx) > 5) { dragging = true; track.classList.add('is-dragging'); }
+        if (dragging) track.scrollLeft = startLeft - dx;
+      });
+      window.addEventListener('mouseup', function () {
+        if (!down) return;
+        down = false;
+        if (!dragging) return;
+        var p = pad(), best = 0, bestD = Infinity;
+        for (var i = 0; i < cards.length; i++) {
+          var d = Math.abs(cards[i].offsetLeft - p - track.scrollLeft);
+          if (d < bestD) { bestD = d; best = i; }
+        }
+        track.scrollTo({ left: cards[best].offsetLeft - p, behavior: behavior });
+        setTimeout(function () {
+          track.classList.remove('is-dragging');
+          dragging = false;
+          normalize();
+        }, reduce ? 0 : 450);
+      });
+    })();
+  </script>
 </body>
 </html>
