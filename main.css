@@ -15,6 +15,13 @@ a:hover {
   color: #2B3F6B;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #FCA311;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .page {
   font-family: 'Inter', system-ui, sans-serif;
   color: #14213D;
