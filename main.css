@@ -22,13 +22,13 @@
   --text-muted: #A8AFBC;
   --text-dim: #7E8696;
 
-  /* Acento: dourado dessaturado, bem menos berrante que o amarelo anterior */
-  --accent: #E3B778;
-  --accent-soft: #F0CE9C;
-  --accent-deep: #B88A4E;
-  --accent-tint: rgba(227, 183, 120, 0.12);
-  --accent-tint-2: rgba(227, 183, 120, 0.22);
-  --accent-glow: rgba(227, 183, 120, 0.4);
+  /* Acento: amarelo claro, quente, sem chegar no amarelo-sinalização antigo */
+  --accent: #F3D18C;
+  --accent-soft: #FCE7B6;
+  --accent-deep: #DEB868;
+  --accent-tint: rgba(243, 209, 140, 0.12);
+  --accent-tint-2: rgba(243, 209, 140, 0.24);
+  --accent-glow: rgba(243, 209, 140, 0.45);
 
   --wa: #25D366;
 
@@ -99,6 +99,7 @@ button:focus-visible {
   background: linear-gradient(90deg, var(--accent-deep), var(--accent-soft));
   z-index: 60;
   pointer-events: none;
+  will-change: transform;
 }
 
 /* ===== Elementos reutilizáveis ===== */
@@ -161,9 +162,10 @@ button:focus-visible {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid transparent;
-  background: rgba(14, 15, 18, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  /* Fundo opaco de proposito: backdrop-filter num cabeçalho fixo reamostra
+     tudo que passa atrás dele a cada quadro e era a maior causa do
+     travamento no scroll. */
+  background: var(--bg);
 }
 
 /* A borda e a sombra só aparecem depois que a página rola */
@@ -262,30 +264,34 @@ button:focus-visible {
   overflow: hidden;
 }
 
-/* Dois halos que respiram devagar, para o fundo preto não ficar morto */
+/* Dois halos que respiram devagar, para o fundo preto não ficar morto.
+   São gradientes radiais, não círculos borrados: o efeito é o mesmo e o
+   navegador não precisa refiltrar a imagem a cada quadro da animação. */
 .hero::before,
 .hero::after {
   content: '';
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(90px);
+  /* Avisa o navegador para tratar o halo como camada própria, assim a
+     animação roda na GPU e não repinta a seção inteira durante o scroll. */
+  will-change: transform, opacity;
 }
 
 .hero::before {
-  width: 520px;
-  height: 520px;
-  top: -160px;
-  right: -120px;
-  background: rgba(227, 183, 120, 0.1);
+  width: 620px;
+  height: 620px;
+  top: -210px;
+  right: -170px;
+  background: radial-gradient(circle closest-side, rgba(243, 209, 140, 0.16), rgba(243, 209, 140, 0) 70%);
 }
 
 .hero::after {
-  width: 420px;
-  height: 420px;
-  bottom: -200px;
-  left: -140px;
-  background: rgba(120, 140, 200, 0.07);
+  width: 520px;
+  height: 520px;
+  bottom: -250px;
+  left: -190px;
+  background: radial-gradient(circle closest-side, rgba(120, 140, 200, 0.12), rgba(120, 140, 200, 0) 70%);
 }
 
 .hero__inner {
@@ -403,6 +409,7 @@ button:focus-visible {
   border-radius: 50%;
   background: conic-gradient(from 0deg, transparent 0deg, var(--accent-glow) 90deg, transparent 200deg, rgba(120, 140, 200, 0.3) 300deg, transparent 360deg);
   z-index: 0;
+  will-change: transform;
 }
 
 /* Máscara que transforma o gradiente acima num anel fino */
@@ -426,9 +433,7 @@ button:focus-visible {
   left: -8px;
   bottom: 18px;
   z-index: 2;
-  background: rgba(26, 29, 35, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--surface);
   border: 1px solid var(--line-strong);
   color: var(--text);
   border-radius: 16px;
@@ -907,9 +912,9 @@ button:focus-visible {
   top: -180px;
   right: -120px;
   border-radius: 50%;
-  background: rgba(227, 183, 120, 0.12);
-  filter: blur(80px);
+  background: radial-gradient(circle closest-side, rgba(243, 209, 140, 0.18), rgba(243, 209, 140, 0) 70%);
   pointer-events: none;
+  will-change: transform, opacity;
 }
 
 .contact__content {
@@ -1076,7 +1081,7 @@ button:focus-visible {
   left: -70%;
   width: 45%;
   height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(227, 183, 120, 0.07), transparent);
+  background: linear-gradient(100deg, transparent, rgba(243, 209, 140, 0.08), transparent);
   pointer-events: none;
 }
 
@@ -1133,7 +1138,7 @@ button:focus-visible {
 .btn-primary:hover,
 .cta-btn--form:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 28px rgba(227, 183, 120, 0.35), 0 16px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 28px rgba(243, 209, 140, 0.35), 0 16px 40px rgba(0, 0, 0, 0.6);
   filter: brightness(1.06);
 }
 
@@ -1178,11 +1183,6 @@ button:focus-visible {
 .btn-primary:hover::after,
 .cta-btn--form:hover::after {
   animation: sheen .8s var(--ease);
-}
-
-.hero__card:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-color: var(--accent-tint-2);
 }
 
 /* ---- Animações contínuas ---- */
@@ -1232,6 +1232,7 @@ button:focus-visible {
 /* O cartão flutuante do hero sobe e desce de leve */
 .hero__card {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes float {
@@ -1243,9 +1244,12 @@ button:focus-visible {
   }
 }
 
-/* Enquanto o mouse está em cima, para de flutuar para não "fugir" do cursor */
+/* Enquanto o mouse está em cima, para de flutuar para não "fugir" do cursor.
+   Não dá para mexer no transform aqui: a animação 'float' tem prioridade sobre
+   a transition, então quem muda é só a borda. */
 .hero__card:hover {
   animation-play-state: paused;
+  border-color: var(--accent-tint-2);
 }
 
 /* Brilho do cartão de contato */
@@ -1304,6 +1308,8 @@ button:focus-visible {
   *,
   *::before,
   *::after {
+    /* Sem animação não há motivo para manter camadas reservadas na GPU */
+    will-change: auto !important;
     animation: none !important;
     transition: none !important;
   }
