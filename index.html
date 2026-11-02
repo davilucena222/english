@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=11">
+  <link rel="stylesheet" href="main.css?v=12">
 </head>
 <body>
   <div class="page">
@@ -195,6 +195,10 @@
             <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
             <div class="benefit-card__text"><h3>Progresso que você enxerga</h3><p>Revisamos juntos o que você já conquistou e o próximo passo.</p></div>
           </div>
+          <div class="benefit-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4a2 2 0 0 1 2-2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 2v5h5"/><path d="M8 13h8M8 17h5"/></svg></span>
+            <div class="benefit-card__text"><h3>Material e atividades por minha conta</h3><p>Eu organizo, desenvolvo e envio tudo para você. Não precisa se preocupar em anotar nada durante a aula.</p></div>
+          </div>
         </div>
       </div>
     </section>
@@ -219,29 +223,28 @@
       </div>
     </section>
 
-    <!-- Seção de depoimentos oculta até haver depoimentos reais. Para reativar,
-         basta descomentar e substituir os textos entre colchetes por depoimentos verdadeiros. -->
-    <!--
-    <section class="testimonials">
+    <section id="depoimentos" class="testimonials">
       <div class="testimonials__inner">
-        <h2 class="section-title section-title--sm">O que dizem meus alunos</h2>
+        <div class="testimonials__head">
+          <p class="eyebrow">Depoimentos</p>
+          <h2 class="section-title section-title--sm">O que dizem meus alunos</h2>
+        </div>
         <div class="card-grid">
           <figure class="quote-card">
-            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+            <blockquote>O curso é ótimo. Evoluí bastante em várias áreas do idioma, sem falar do material.</blockquote>
+            <figcaption>Jacqueline</figcaption>
           </figure>
           <figure class="quote-card">
-            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+            <blockquote>Com essa abordagem eu consegui voltar a falar o inglês que eu tanto queria. Eu estava parado há um bom tempo.</blockquote>
+            <figcaption>Emerson</figcaption>
           </figure>
           <figure class="quote-card">
-            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+            <blockquote>Para quem é iniciante as aulas ajudam demais. A calma e o passo a passo fazem toda a diferença na hora de perder o medo de falar.</blockquote>
+            <figcaption>Marjorie</figcaption>
           </figure>
         </div>
       </div>
     </section>
-    -->
 
 
     <section id="contato" class="contact">
@@ -302,7 +305,7 @@
         '.intro__head', '.video-frame',
         '.how__head', '.benefits__head',
         '.about__media', '.about__content',
-        '.contact__card', '.testimonials__inner > *'
+        '.contact__card', '.testimonials__head'
       ];
       var groups = ['.feat-grid', '.card-grid'];
 
