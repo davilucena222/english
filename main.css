@@ -929,17 +929,6 @@ button:focus-visible {
   color: var(--text);
 }
 
-.quote-card figcaption {
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--text);
-}
-
-.quote-card__meta {
-  font-weight: 400;
-  color: var(--text-dim);
-}
-
 /* ===== Contato ===== */
 .contact__inner {
   max-width: 1160px;
