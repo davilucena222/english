@@ -5,21 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>English with Davi — Aulas particulares de inglês</title>
   <meta name="description" content="Aulas particulares de inglês que se adaptam ao seu ritmo e aos seus objetivos.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314213D'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23FCA311'>E</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314213D'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23F97316'>E</text></svg>">
+  <meta name="theme-color" content="#FFFFFF">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="English with Davi">
   <meta property="og:title" content="English with Davi — Aulas particulares de inglês">
   <meta property="og:description" content="Aulas particulares de inglês que se adaptam ao seu ritmo e aos seus objetivos.">
-  <meta property="og:image" content="davi.jpeg">
+  <!-- og:url e og:image precisam ser absolutos: WhatsApp, Instagram e Facebook
+       ignoram caminho relativo e a previa do link sai sem imagem. -->
+  <meta property="og:url" content="https://davilucena222.github.io/english/">
+  <meta property="og:image" content="https://davilucena222.github.io/english/davi.jpeg">
+  <meta property="og:image:alt" content="Davi Luiz, professor de inglês">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="main.css?v=16">
 </head>
 <body>
   <div class="page">
+
+    <div class="scroll-progress" data-progress aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="site-header__inner">
@@ -50,7 +57,7 @@
             <img src="davi.jpeg" alt="Davi Luiz, professor de inglês" class="avatar" width="1080" height="1080" decoding="async" fetchpriority="high">
             <div class="hero__card">
               <span class="hero__card-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
               </span>
               <span class="hero__card-text"><strong>Conteúdo que se adapta</strong>ajustado a cada aula</span>
             </div>
@@ -74,32 +81,32 @@
         </div>
         <div class="feat-grid">
           <div class="feat-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
             <h3>Inglês de quem usa no trabalho</h3>
             <p>Uso o inglês todos os dias com times internacionais. Você aprende com quem vive o idioma na prática, não só na teoria.</p>
           </div>
           <div class="feat-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></span>
             <h3>O caminho de quem aprendeu sozinho</h3>
-            <p>Aprendi por conta própria desde os 15 anos. Conheço os atalhos que funcionam e as armadilhas que fazem tanta gente desistir.</p>
+            <p>Aprendi por conta própria. Conheço os atalhos que funcionam e as armadilhas que fazem tanta gente desistir.</p>
           </div>
           <div class="feat-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>
             <h3>Aula 100% individual</h3>
             <p>Nada de dividir a atenção com uma turma. Cada minuto da aula é seu: suas dúvidas, sua fala, seu ritmo.</p>
           </div>
           <div class="feat-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
             <h3>Foco em falar com confiança</h3>
             <p>Você pratica conversação desde as primeiras aulas, perde o medo de errar e começa a se comunicar de verdade.</p>
           </div>
           <div class="feat-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
             <h3>Preparação para a carreira</h3>
             <p>Entrevistas, reuniões, e-mails e apresentações: o inglês que abre portas no mercado, inclusive na área de tecnologia.</p>
           </div>
           <div class="feat-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
             <h3>Online, de onde você estiver</h3>
             <p>Sem trânsito e sem perder tempo. Basta uma conexão com a internet para ter aula em casa, no trabalho ou viajando.</p>
           </div>
@@ -169,28 +176,32 @@
         </div>
         <div class="card-grid">
           <div class="benefit-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg></span>
             <div class="benefit-card__text"><h3>Foco no seu objetivo</h3><p>Cada aula aponta para o que você quer alcançar com o inglês.</p></div>
           </div>
           <div class="benefit-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
             <div class="benefit-card__text"><h3>Conteúdo que evolui com você</h3><p>O material muda conforme seu progresso, sem pular etapas nem travar.</p></div>
           </div>
           <div class="benefit-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
             <div class="benefit-card__text"><h3>Mais conversa, menos decoreba</h3><p>Você pratica falando desde o começo, em situações reais.</p></div>
           </div>
           <div class="benefit-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
             <div class="benefit-card__text"><h3>Horários flexíveis</h3><p>Aulas online, encaixadas na sua rotina.</p></div>
           </div>
           <div class="benefit-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
             <div class="benefit-card__text"><h3>Atenção individual</h3><p>Suas dúvidas viram parte da aula. Nada fica para trás.</p></div>
           </div>
           <div class="benefit-card">
-            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
             <div class="benefit-card__text"><h3>Progresso que você enxerga</h3><p>Revisamos juntos o que você já conquistou e o próximo passo.</p></div>
+          </div>
+          <div class="benefit-card">
+            <span class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4a2 2 0 0 1 2-2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 2v5h5"/><path d="M8 13h8M8 17h5"/></svg></span>
+            <div class="benefit-card__text"><h3>Material e atividades por minha conta</h3><p>Eu organizo, desenvolvo e envio tudo para você. Não precisa se preocupar em anotar nada durante a aula.</p></div>
           </div>
         </div>
       </div>
@@ -203,42 +214,37 @@
         </div>
         <div class="about__content">
           <p class="eyebrow">Sobre mim</p>
-          <h2 class="section-title">Oi, eu sou Davi Luiz!</h2>
-          <p class="about__text about__text--justify">Estudo inglês desde os 15 anos e aprendi sozinho, testando o que funcionava para mim e descartando o que não funcionava. Hoje, formado em Ciência da Computação, uso o inglês todos os dias trabalhando com times internacionais, em reuniões, mensagens e projetos reais.</p>
+          <h2 class="section-title">Olá, eu sou Davi Luiz!</h2>
+          <p class="about__text about__text--justify">Aprendi inglês sozinho, testando o que funcionava para mim e descartando o que não funcionava. Hoje, formado em Ciência da Computação, uso o inglês todos os dias trabalhando com times internacionais, em reuniões, mensagens e projetos reais.</p>
           <p class="about__text">Essa trajetória me ensinou que cada pessoa aprende de um jeito. Por isso, minhas aulas partem de você: do seu ritmo, dos seus interesses e das suas metas.</p>
           <div class="tags">
             <span class="tag">Ciência da Computação</span>
             <span class="tag">Times internacionais</span>
-            <span class="tag">Inglês desde os 15 anos</span>
             <span class="tag">Aulas 100% online</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Seção de depoimentos oculta até haver depoimentos reais. Para reativar,
-         basta descomentar e substituir os textos entre colchetes por depoimentos verdadeiros. -->
-    <!--
-    <section class="testimonials">
+    <section id="depoimentos" class="testimonials">
       <div class="testimonials__inner">
-        <h2 class="section-title section-title--sm">O que dizem meus alunos</h2>
+        <div class="testimonials__head">
+          <p class="eyebrow">Depoimentos</p>
+          <h2 class="section-title section-title--sm">O que dizem meus alunos</h2>
+        </div>
         <div class="card-grid">
           <figure class="quote-card">
-            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+            <blockquote>O curso é ótimo. Evoluí bastante em várias áreas do idioma, sem falar do material.</blockquote>
           </figure>
           <figure class="quote-card">
-            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+            <blockquote>Com essa abordagem eu consegui voltar a falar o inglês que eu tanto queria. Eu estava parado há um bom tempo.</blockquote>
           </figure>
           <figure class="quote-card">
-            <blockquote>[Depoimento real de um aluno sobre a evolução nas aulas.]</blockquote>
-            <figcaption>[Nome do aluno] <span class="quote-card__meta">· [objetivo]</span></figcaption>
+            <blockquote>Para quem é iniciante as aulas ajudam demais. A calma e o passo a passo fazem toda a diferença na hora de perder o medo de falar.</blockquote>
           </figure>
         </div>
       </div>
     </section>
-    -->
 
 
     <section id="contato" class="contact">
@@ -265,6 +271,80 @@
     </footer>
 
   </div>
+  <script>
+    /* Animações de rolagem: revelação dos blocos, barra de progresso e
+       borda do cabeçalho. Tudo desligado se o sistema pedir menos movimento. */
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // --- Barra de progresso no topo ---
+      var bar = document.querySelector('[data-progress]');
+      var header = document.querySelector('.site-header');
+      var queued = false;
+
+      function onScroll() {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(function () {
+          queued = false;
+          var h = document.documentElement.scrollHeight - window.innerHeight;
+          if (bar) bar.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+          if (header) header.classList.toggle('is-stuck', window.scrollY > 8);
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      if (reduce) return;
+
+      // --- Revelação ao entrar na tela ---
+      // Os seletores abaixo cobrem os blocos de conteúdo; os filhos de grades
+      // recebem um atraso crescente para aparecerem em cascata.
+      var blocks = [
+        '.intro__head', '.video-frame',
+        '.how__head', '.benefits__head',
+        '.about__media', '.about__content',
+        '.contact__card', '.testimonials__head'
+      ];
+      var groups = ['.feat-grid', '.card-grid'];
+
+      var targets = [];
+
+      blocks.forEach(function (sel) {
+        Array.prototype.forEach.call(document.querySelectorAll(sel), function (el) {
+          el.classList.add('reveal');
+          targets.push(el);
+        });
+      });
+
+      groups.forEach(function (sel) {
+        Array.prototype.forEach.call(document.querySelectorAll(sel), function (grid) {
+          Array.prototype.forEach.call(grid.children, function (child, i) {
+            child.classList.add('reveal');
+            if (i % 6) child.classList.add('reveal--d' + (i % 6));
+            targets.push(child);
+          });
+        });
+      });
+
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+
+      targets.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+
   <script>
     (function () {
       var track = document.querySelector('[data-cf-track]');
