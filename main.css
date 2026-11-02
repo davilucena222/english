@@ -228,6 +228,11 @@ button:focus-visible {
 
 .main-nav a {
   text-decoration: none;
+}
+
+/* O :not() exclui o botão: sem ele, '.main-nav a' (0,1,1) venceria o
+   '.nav-cta' (0,1,0) e o texto do botão sairia cinza. */
+.main-nav a:not(.nav-cta) {
   color: var(--text-muted);
 }
 
