@@ -1,43 +1,58 @@
 /* ===== Paleta =====
-   Tema escuro suavizado: nenhuma cor é preto puro nem branco puro, para o
-   contraste não cansar a vista. Trocar os valores daqui muda o site inteiro. */
+   Tema claro: branco como base, navy na estrutura e UMA cor saturada
+   (laranja) reservada só para as ações. Trocar os valores daqui muda o
+   site inteiro. */
 :root {
-  /* Faz o navegador desenhar barra de rolagem e controles de vídeo escuros */
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* Fundos, do mais profundo ao mais elevado */
-  --bg: #0E0F12;
-  --bg-2: #121418;
-  --bg-3: #16181D;
-  --surface: #1A1D23;
-  --surface-2: #20242B;
-  --surface-3: #272B33;
+  /* Fundos */
+  --bg: #FFFFFF;
+  --bg-2: #F5F7FA;
+  --bg-3: #EDF1F7;
+  --surface: #FFFFFF;
+  --surface-2: #F5F7FA;
+  --surface-3: #E8EDF4;
+
+  /* Faixa escura: a seção "Apresentação" e o cartão de contato.
+     É o contraste forte do site, e por isso aparece só duas vezes. */
+  --band: #14213D;
+  --band-2: #1C2C4F;
+  --band-line: #2B3D63;
+  --band-text: #FFFFFF;
+  --band-muted: #C5CDDD;
 
   /* Traços e divisórias */
-  --line: #24272F;
-  --line-strong: #323742;
+  --line: #E3E8F0;
+  --line-strong: #CBD4E1;
 
   /* Texto */
-  --text: #ECEEF2;
-  --text-muted: #A8AFBC;
-  --text-dim: #7E8696;
+  --text: #14213D;
+  --text-muted: #475569;
+  --text-dim: #64748B;
 
-  /* Acento: o amarelo vivo da referência (#FCA311, o mesmo do site antigo).
-     No fundo escuro ele fica bem mais destacado do que ficava no branco. */
-  --accent: #FCA311;
-  --accent-soft: #FFB94A;
-  --accent-deep: #E08C00;
-  --accent-tint: rgba(252, 163, 17, 0.14);
-  --accent-tint-2: rgba(252, 163, 17, 0.3);
-  --accent-glow: rgba(252, 163, 17, 0.5);
+  /* Ação: laranja só em botão e CTA.
+     São dois tons porque um laranja vivo o bastante para preencher um botão
+     nunca é legível como texto sobre branco - --accent preenche,
+     --accent-ink escreve. */
+  --accent: #F97316;
+  --accent-soft: #FB923C;
+  --accent-deep: #C2410C;
+  --accent-ink: #C2410C;
+  --accent-tint: rgba(249, 115, 22, 0.1);
+  --accent-tint-2: rgba(249, 115, 22, 0.22);
+  --accent-glow: rgba(249, 115, 22, 0.35);
+
+  /* Progresso: reforça a ideia de evolução nos benefícios */
+  --success: #15803D;
+  --success-tint: rgba(21, 128, 61, 0.1);
+  --success-tint-2: rgba(21, 128, 61, 0.22);
 
   --wa: #25D366;
 
-  /* Sombras: no escuro, sombra preta quase não aparece, então o realce vem
-     de um brilho suave em volta do elemento. */
-  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 14px 34px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 26px 64px rgba(0, 0, 0, 0.65);
+  /* Sombras tingidas de navy, não pretas: no claro, sombra preta suja. */
+  --shadow-sm: 0 2px 8px rgba(20, 33, 61, 0.06);
+  --shadow-md: 0 12px 30px rgba(20, 33, 61, 0.1);
+  --shadow-lg: 0 24px 60px rgba(20, 33, 61, 0.14);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -58,12 +73,12 @@ a {
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--accent-ink);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -120,13 +135,14 @@ button:focus-visible {
 .eyebrow {
   margin: 0;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .eyebrow--light {
+  /* Usado só dentro da faixa navy, onde o laranja vivo tem contraste de sobra */
   color: var(--accent-soft);
 }
 
@@ -163,16 +179,15 @@ button:focus-visible {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid transparent;
-  /* Fundo opaco de proposito: backdrop-filter num cabeçalho fixo reamostra
-     tudo que passa atrás dele a cada quadro e era a maior causa do
-     travamento no scroll. */
+  /* Fundo opaco de propósito: backdrop-filter num cabeçalho fixo reamostra
+     tudo que passa atrás dele a cada quadro e trava o scroll. */
   background: var(--bg);
 }
 
 /* A borda e a sombra só aparecem depois que a página rola */
 .site-header.is-stuck {
   border-bottom-color: var(--line);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-md);
 }
 
 .site-header__inner {
@@ -242,9 +257,10 @@ button:focus-visible {
 }
 
 .nav-cta {
-  background: var(--surface-2);
-  border: 1px solid var(--line-strong);
-  color: var(--text);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #141414;
+  font-weight: 600;
   padding: 12px 20px;
   border-radius: 999px;
   min-height: 44px;
@@ -254,8 +270,7 @@ button:focus-visible {
 }
 
 .nav-cta:hover {
-  color: var(--accent);
-  border-color: var(--accent-tint-2);
+  color: #141414;
 }
 
 /* ===== Hero ===== */
@@ -284,7 +299,7 @@ button:focus-visible {
   height: 620px;
   top: -210px;
   right: -170px;
-  background: radial-gradient(circle closest-side, rgba(252, 163, 17, 0.16), rgba(252, 163, 17, 0) 70%);
+  background: radial-gradient(circle closest-side, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0) 70%);
 }
 
 .hero::after {
@@ -292,7 +307,7 @@ button:focus-visible {
   height: 520px;
   bottom: -250px;
   left: -190px;
-  background: radial-gradient(circle closest-side, rgba(120, 140, 200, 0.12), rgba(120, 140, 200, 0) 70%);
+  background: radial-gradient(circle closest-side, rgba(20, 33, 61, 0.07), rgba(20, 33, 61, 0) 70%);
 }
 
 .hero__inner {
@@ -384,7 +399,7 @@ button:focus-visible {
 }
 
 .btn-ghost:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .hero__media {
@@ -408,7 +423,7 @@ button:focus-visible {
   position: absolute;
   inset: -14px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, transparent 0deg, var(--accent-glow) 90deg, transparent 200deg, rgba(120, 140, 200, 0.3) 300deg, transparent 360deg);
+  background: conic-gradient(from 0deg, transparent 0deg, var(--accent-glow) 90deg, transparent 200deg, rgba(20, 33, 61, 0.25) 300deg, transparent 360deg);
   z-index: 0;
   will-change: transform;
 }
@@ -426,7 +441,8 @@ button:focus-visible {
 .hero__photo .avatar {
   position: relative;
   z-index: 1;
-  border: 1px solid var(--line-strong);
+  border: 4px solid var(--bg);
+  box-shadow: var(--shadow-md);
 }
 
 .hero__card {
@@ -471,10 +487,14 @@ button:focus-visible {
 }
 
 /* ===== Apresentação ===== */
+/* A única faixa escura do site. É aqui que mora o contraste forte. */
 .intro {
-  background: var(--bg-2);
-  color: var(--text);
-  border-block: 1px solid var(--line);
+  background: var(--band);
+  color: var(--band-text);
+}
+
+.intro .section-title {
+  color: var(--band-text);
 }
 
 .intro__inner {
@@ -499,7 +519,7 @@ button:focus-visible {
 .intro__lead {
   margin: 0;
   font-size: 18px;
-  color: var(--text-muted);
+  color: var(--band-muted);
 }
 
 .video-frame {
@@ -508,8 +528,8 @@ button:focus-visible {
   margin: 0 auto;
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid var(--line-strong);
-  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--band-line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
   background: #0A0B0D;
 }
 
@@ -538,11 +558,12 @@ button:focus-visible {
   }
 }
 
+/* Dentro da faixa navy, então seguem a paleta escura dela */
 .feat-card {
   position: relative;
   overflow: hidden;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--band-2);
+  border: 1px solid var(--band-line);
   border-radius: 20px;
   padding: 28px;
   display: flex;
@@ -554,12 +575,19 @@ button:focus-visible {
   margin: 0;
   font-size: 19px;
   font-weight: 600;
-  color: var(--text);
+  color: var(--band-text);
 }
 
 .feat-card p {
   margin: 0;
-  color: var(--text-muted);
+  color: var(--band-muted);
+}
+
+/* O selo do ícone também inverte dentro da faixa */
+.feat-card .icon-badge {
+  background: rgba(249, 115, 22, 0.16);
+  border-color: rgba(249, 115, 22, 0.35);
+  color: var(--accent-soft);
 }
 
 /* ===== Como funciona ===== */
@@ -649,9 +677,9 @@ button:focus-visible {
 }
 
 .cf-card:nth-child(even) {
-  background: linear-gradient(160deg, var(--surface-2), var(--bg-3));
-  color: var(--text);
-  border: 1px solid var(--accent-tint-2);
+  background: var(--band);
+  color: var(--band-text);
+  border: 1px solid var(--band);
   box-shadow: var(--shadow-sm);
 }
 
@@ -673,16 +701,19 @@ button:focus-visible {
 }
 
 .cf-card:nth-child(odd) .cf-num {
-  color: var(--text-dim);
+  color: var(--line-strong);
 }
 
 .cf-card:nth-child(even) .cf-num {
-  color: var(--accent);
+  color: var(--accent-soft);
 }
 
-.cf-card:nth-child(odd) p,
-.cf-card:nth-child(even) p {
+.cf-card:nth-child(odd) p {
   color: var(--text-muted);
+}
+
+.cf-card:nth-child(even) p {
+  color: var(--band-muted);
 }
 
 .cf-btn {
@@ -699,9 +730,9 @@ button:focus-visible {
 }
 
 .cf-btn:hover {
-  background: var(--accent);
-  color: #141414;
-  border-color: var(--accent);
+  background: var(--band);
+  color: var(--band-text);
+  border-color: var(--band);
   transform: scale(1.08);
 }
 
@@ -721,6 +752,14 @@ button:focus-visible {
 .benefits {
   background: var(--bg-2);
   border-block: 1px solid var(--line);
+}
+
+/* Verde só aqui: os benefícios são o "resultado", e o verde reforça a
+   ideia de evolução. O laranja fica reservado para as ações. */
+.benefit-card .icon-badge {
+  background: var(--success-tint);
+  border-color: var(--success-tint-2);
+  color: var(--success);
 }
 
 .benefits__inner {
@@ -831,7 +870,7 @@ button:focus-visible {
 
 .tag:hover {
   border-color: var(--accent-tint-2);
-  color: var(--accent);
+  color: var(--accent-ink);
   background: var(--accent-tint);
 }
 
@@ -892,9 +931,9 @@ button:focus-visible {
 .contact__card {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(145deg, var(--surface-2), var(--bg-2) 70%);
-  border: 1px solid var(--line-strong);
-  color: var(--text);
+  background: var(--band);
+  border: 1px solid var(--band);
+  color: var(--band-text);
   border-radius: 32px;
   padding: clamp(40px, 6vw, 72px);
   display: flex;
@@ -913,7 +952,7 @@ button:focus-visible {
   top: -180px;
   right: -120px;
   border-radius: 50%;
-  background: radial-gradient(circle closest-side, rgba(252, 163, 17, 0.18), rgba(252, 163, 17, 0) 70%);
+  background: radial-gradient(circle closest-side, rgba(249, 115, 22, 0.22), rgba(249, 115, 22, 0) 70%);
   pointer-events: none;
   will-change: transform, opacity;
 }
@@ -938,7 +977,7 @@ button:focus-visible {
 .contact__text {
   margin: 0;
   font-size: 18px;
-  color: var(--text-muted);
+  color: var(--band-muted);
 }
 
 .cta-actions {
@@ -976,17 +1015,17 @@ button:focus-visible {
 
 .wa-btn {
   background: transparent;
-  color: var(--text);
+  color: var(--band-text);
   font-weight: 600;
   font-size: 17px;
   padding: 18px 32px;
-  border: 1.5px solid var(--line-strong);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
 }
 
 .wa-btn:hover {
-  background: rgba(37, 211, 102, 0.1) !important;
-  border-color: rgba(37, 211, 102, 0.6) !important;
-  color: var(--text);
+  background: rgba(37, 211, 102, 0.14) !important;
+  border-color: rgba(37, 211, 102, 0.75) !important;
+  color: var(--band-text);
 }
 
 .wa-btn:focus-visible {
@@ -1036,7 +1075,7 @@ button:focus-visible {
 }
 
 .site-footer__social a:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 /* =====================================================================
@@ -1066,11 +1105,16 @@ button:focus-visible {
 }
 
 .feat-card:hover,
-.benefit-card:hover,
 .quote-card:hover {
   transform: translateY(-6px);
   border-color: var(--accent-tint-2);
   box-shadow: var(--shadow-md), 0 0 0 1px var(--accent-tint);
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--success-tint-2);
+  box-shadow: var(--shadow-md);
 }
 
 /* Faixa de luz que atravessa o cartão no hover */
@@ -1082,8 +1126,12 @@ button:focus-visible {
   left: -70%;
   width: 45%;
   height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(252, 163, 17, 0.1), transparent);
+  background: linear-gradient(100deg, transparent, rgba(20, 33, 61, 0.05), transparent);
   pointer-events: none;
+}
+
+.feat-card::after {
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.07), transparent);
 }
 
 .feat-card:hover::after,
@@ -1104,8 +1152,8 @@ button:focus-visible {
 .feat-card:hover .icon-badge,
 .benefit-card:hover .icon-badge {
   transform: scale(1.1) rotate(-6deg);
-  background: var(--accent-tint-2);
-  border-color: var(--accent);
+  background: var(--success-tint-2);
+  border-color: var(--success);
 }
 
 .tag:hover {
@@ -1139,19 +1187,19 @@ button:focus-visible {
 .btn-primary:hover,
 .cta-btn--form:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 28px rgba(252, 163, 17, 0.45), 0 16px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 28px rgba(249, 115, 22, 0.45), 0 4px 12px rgba(20, 33, 61, 0.12);
   filter: brightness(1.06);
 }
 
 .nav-cta:hover {
   transform: translateY(-2px);
-  background: var(--surface-3);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+  filter: brightness(1.05);
 }
 
 .wa-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 24px rgba(37, 211, 102, 0.25), 0 14px 34px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0 24px rgba(37, 211, 102, 0.3);
 }
 
 .btn-ghost:hover {
