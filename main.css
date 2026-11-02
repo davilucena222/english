@@ -38,6 +38,11 @@
   --accent-soft: #FB923C;
   --accent-deep: #C2410C;
   --accent-ink: #C2410C;
+  /* Preenchimento dos botões: amarelo forte, separado do acento laranja
+     para que eyebrow, ícones e halos não mudem junto. */
+  --btn: #FFC800;
+  --btn-strong: #FFD633;
+
   --accent-tint: rgba(249, 115, 22, 0.1);
   --accent-tint-2: rgba(249, 115, 22, 0.22);
   --accent-glow: rgba(249, 115, 22, 0.35);
@@ -262,10 +267,10 @@ button:focus-visible {
 }
 
 .nav-cta {
-  background: var(--accent);
-  border: 1px solid var(--accent);
+  background: var(--btn);
+  border: 1px solid var(--btn);
   color: #FFFFFF;
-  text-shadow: 0 1px 2px rgba(124, 45, 18, 0.45);
+  text-shadow: 0 1px 3px rgba(120, 72, 0, 0.75);
   font-weight: 600;
   padding: 12px 20px;
   border-radius: 999px;
@@ -372,9 +377,9 @@ button:focus-visible {
   position: relative;
   overflow: hidden;
   text-decoration: none;
-  background: var(--accent);
+  background: var(--btn);
   color: #FFFFFF;
-  text-shadow: 0 1px 2px rgba(124, 45, 18, 0.45);
+  text-shadow: 0 1px 3px rgba(120, 72, 0, 0.75);
   font-weight: 700;
   font-size: 17px;
   padding: 16px 28px;
@@ -1010,9 +1015,9 @@ button:focus-visible {
 }
 
 .cta-btn--form {
-  background: var(--accent);
+  background: var(--btn);
   color: #FFFFFF;
-  text-shadow: 0 1px 2px rgba(124, 45, 18, 0.45);
+  text-shadow: 0 1px 3px rgba(120, 72, 0, 0.75);
   font-weight: 700;
   font-size: 18px;
   padding: 20px 32px;
@@ -1204,9 +1209,9 @@ button:focus-visible {
 .cta-btn--form:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 0 0 4px rgba(249, 115, 22, 0.22),
-    0 0 26px rgba(249, 115, 22, 0.65),
-    0 14px 34px rgba(249, 115, 22, 0.45),
+    0 0 0 4px rgba(255, 200, 0, 0.25),
+    0 0 26px rgba(255, 200, 0, 0.7),
+    0 14px 34px rgba(255, 200, 0, 0.5),
     0 4px 12px rgba(20, 33, 61, 0.12);
   filter: brightness(1.04);
 }
@@ -1223,9 +1228,9 @@ button:focus-visible {
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 0 0 3px rgba(249, 115, 22, 0.22),
-    0 0 18px rgba(249, 115, 22, 0.6),
-    0 8px 20px rgba(249, 115, 22, 0.4);
+    0 0 0 3px rgba(255, 200, 0, 0.25),
+    0 0 18px rgba(255, 200, 0, 0.65),
+    0 8px 20px rgba(255, 200, 0, 0.45);
   filter: brightness(1.04);
 }
 
