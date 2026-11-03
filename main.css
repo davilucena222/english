@@ -34,28 +34,24 @@
      São dois tons porque um laranja vivo o bastante para preencher um botão
      nunca é legível como texto sobre branco - --accent preenche,
      --accent-ink escreve. */
-  --accent: #FFDF00;
-  --accent-soft: #FFE959;
-  /* O mesmo amarelo escurecido. Existe porque #FFDF00 como TEXTO sobre
-     branco da 1.33:1 - some na pagina. Mesma familia de cor, zero laranja. */
-  --accent-deep: #806D00;
-  --accent-ink: #806D00;
+  --accent: #F5C02A;
+  --accent-soft: #F9D675;
+  /* Amarelo-ouro #F5C02A: puxa para o dourado, não para o verde.
+     --accent-ink é o mesmo amarelo escurecido, porque #F5C02A como TEXTO
+     sobre branco da 1.7:1 - some na pagina. Zero laranja. */
+  --accent-deep: #7B6015;
+  --accent-ink: #7B6015;
   /* Preenchimento dos botões, separado do acento laranja para que eyebrow,
      ícones e halos não mudem junto. Amarelo de luminância média (47%) e
      saturação contida, entre o amarelo-néon e o laranja. */
-  --btn: #FFDF00;
-  --btn-strong: #FFE959;
+  --btn: #F5C02A;
+  --btn-strong: #F9D675;
 
   /* Opacidade um pouco maior que a do laranja: amarelo e mais claro e
      sumiria no fundo branco nos mesmos valores. */
-  --accent-tint: rgba(255, 223, 0, 0.18);
-  --accent-tint-2: rgba(255, 223, 0, 0.4);
-  --accent-glow: rgba(255, 223, 0, 0.55);
-
-  /* Progresso: reforça a ideia de evolução nos benefícios */
-  --success: #15803D;
-  --success-tint: rgba(21, 128, 61, 0.1);
-  --success-tint-2: rgba(21, 128, 61, 0.22);
+  --accent-tint: rgba(245, 192, 42, 0.18);
+  --accent-tint-2: rgba(245, 192, 42, 0.4);
+  --accent-glow: rgba(245, 192, 42, 0.55);
 
   --wa: #25D366;
 
@@ -311,7 +307,7 @@ button:focus-visible {
   height: 620px;
   top: -210px;
   right: -170px;
-  background: radial-gradient(circle closest-side, rgba(255, 223, 0, 0.22), rgba(255, 223, 0, 0) 70%);
+  background: radial-gradient(circle closest-side, rgba(245, 192, 42, 0.22), rgba(245, 192, 42, 0) 70%);
 }
 
 .hero::after {
@@ -594,8 +590,8 @@ button:focus-visible {
 
 /* O selo do ícone também inverte dentro da faixa */
 .feat-card .icon-badge {
-  background: rgba(255, 223, 0, 0.16);
-  border-color: rgba(255, 223, 0, 0.4);
+  background: rgba(245, 192, 42, 0.16);
+  border-color: rgba(245, 192, 42, 0.4);
   color: var(--accent-soft);
 }
 
@@ -765,13 +761,6 @@ button:focus-visible {
   border-block: 1px solid var(--line);
 }
 
-/* Verde só aqui: os benefícios são o "resultado", e o verde reforça a
-   ideia de evolução. O laranja fica reservado para as ações. */
-.benefit-card .icon-badge {
-  background: var(--success-tint);
-  border-color: var(--success-tint-2);
-  color: var(--success);
-}
 
 .benefits__inner {
   max-width: 1160px;
@@ -970,7 +959,7 @@ button:focus-visible {
   top: -180px;
   right: -120px;
   border-radius: 50%;
-  background: radial-gradient(circle closest-side, rgba(255, 223, 0, 0.22), rgba(255, 223, 0, 0) 70%);
+  background: radial-gradient(circle closest-side, rgba(245, 192, 42, 0.22), rgba(245, 192, 42, 0) 70%);
   pointer-events: none;
   will-change: transform, opacity;
 }
@@ -1130,8 +1119,8 @@ button:focus-visible {
 
 .benefit-card:hover {
   transform: translateY(-4px) scale(1.035);
-  border-color: var(--success-tint-2);
-  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-tint-2);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--accent-tint);
 }
 
 /* Cursor de link nos cartões */
@@ -1177,8 +1166,8 @@ button:focus-visible {
 .feat-card:hover .icon-badge,
 .benefit-card:hover .icon-badge {
   transform: scale(1.1) rotate(-6deg);
-  background: var(--success-tint-2);
-  border-color: var(--success);
+  background: var(--accent-tint-2);
+  border-color: var(--accent);
 }
 
 .tag:hover {
@@ -1214,9 +1203,9 @@ button:focus-visible {
 .cta-btn--form:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 0 0 4px rgba(255, 223, 0, 0.35),
-    0 0 26px rgba(255, 223, 0, 0.75),
-    0 14px 34px rgba(255, 223, 0, 0.55),
+    0 0 0 4px rgba(245, 192, 42, 0.35),
+    0 0 26px rgba(245, 192, 42, 0.75),
+    0 14px 34px rgba(245, 192, 42, 0.55),
     0 4px 12px rgba(20, 33, 61, 0.12);
   filter: brightness(1.04);
 }
@@ -1233,9 +1222,9 @@ button:focus-visible {
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 0 0 3px rgba(255, 223, 0, 0.35),
-    0 0 18px rgba(255, 223, 0, 0.7),
-    0 8px 20px rgba(255, 223, 0, 0.5);
+    0 0 0 3px rgba(245, 192, 42, 0.35),
+    0 0 18px rgba(245, 192, 42, 0.7),
+    0 8px 20px rgba(245, 192, 42, 0.5);
   filter: brightness(1.04);
 }
 
