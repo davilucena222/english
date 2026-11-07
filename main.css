@@ -527,9 +527,11 @@ button:focus-visible {
   color: var(--band-muted);
 }
 
+/* Vídeo vertical 9:16 (formato de story). A largura também é limitada
+   pela altura da tela, para o vídeo inteiro caber sem rolar. */
 .video-frame {
   width: 100%;
-  max-width: 960px;
+  max-width: min(360px, calc(80vh * 9 / 16));
   margin: 0 auto;
   border-radius: 24px;
   overflow: hidden;
@@ -541,7 +543,8 @@ button:focus-visible {
 .video {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
   background: #0A0B0D;
 }
 
@@ -1074,8 +1077,15 @@ button:focus-visible {
 }
 
 .site-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--text-muted);
   text-decoration: none;
+}
+
+.site-footer__social svg {
+  flex-shrink: 0;
 }
 
 .site-footer__social a:hover {
